@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding:0;
+    .right{
+        display: flex;
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2f2f2;
+            text-decoration: none;
+            color: black;
+            padding: 10px 12px;
+            svg{
+                width: 15px;
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+    }
+
+    .left{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            text-decoration: none;
+            color: black;
+            padding: 10px 12px;
+        }
+        a:hover{
+            background-color: #f2f2f2;
+        }
+    }
+}
+

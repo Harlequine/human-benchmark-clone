@@ -1,0 +1,36 @@
+.main-page{
+    width: 100%;
+    .hero{
+        background-color: #2b87d1;
+        
+        .container{
+            margin-top: 60px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            gap:1rem;
+            svg{
+                width: 150px;
+                height: 130px;
+            }
+    
+            .get-started{
+                background-color: #ffd154;
+                padding: 12px 30px;
+                border-radius: 3px;
+                overflow: hidden;
+                a{
+                    text-decoration: none;
+                    color: black;
+                    font-weight: bold;
+                }
+            }
+        }
+    
+        
+    
+    }
+}

@@ -1,14 +1,16 @@
-import { Routes, Route } from 'react-router-dom'
-import MainPage from './Pages/Main-Page/MainPage'
-import ReactionTime from './Pages/Reaction-Time/ReactionTime'
-import './App.css'
+import {Routes, Route} from 'react-router-dom'
+
+import NavBar from "./assets/components/Nav-Bar/NavBar"
+import MainPage from "./assets/pages/Main-Page/MainPage"
+
 
 function App() {
+
   return (
     <>
+      <NavBar />
       <Routes>
         <Route path='/' element={ <MainPage />} />
-        <Route path='reaction-time'  element={ <ReactionTime /> }/>
       </Routes>
     </>
   )
