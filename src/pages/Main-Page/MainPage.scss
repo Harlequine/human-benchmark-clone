@@ -1,4 +1,4 @@
-.main-page{
+#main-page{
     width: 100%;
     .hero{
         background-color: #2b87d1;
@@ -16,14 +16,9 @@
                 width: 150px;
                 height: 130px;
             }
-    
-            .get-started{
-                background-color: #ffd154;
-                padding: 12px 30px;
-                border-radius: 3px;
-                overflow: hidden;
+
+            .game-btn{
                 a{
-                    text-decoration: none;
                     color: black;
                     font-weight: bold;
                 }

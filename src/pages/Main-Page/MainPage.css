@@ -1,0 +1,24 @@
+#main-page {
+  width: 100%;
+}
+#main-page .hero {
+  background-color: #2b87d1;
+}
+#main-page .hero .container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 1rem;
+}
+#main-page .hero .container svg {
+  width: 150px;
+  height: 130px;
+}
+#main-page .hero .container .game-btn a {
+  color: black;
+  font-weight: bold;
+}

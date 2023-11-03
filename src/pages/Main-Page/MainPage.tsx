@@ -6,7 +6,7 @@ import './MainPage.css'
 
 const MainPage = () => {
   return (
-    <div className="main-page">
+    <div id="main-page">
         <div className='hero'>
             <div className='container'>
                 <svg>
@@ -14,7 +14,7 @@ const MainPage = () => {
                 </svg>
                 <h1>Human Benchmark</h1>
                 <h2>Measure your abilities with brain games and cognitive tests.</h2>
-                <div className="get-started">
+                <div className="game-btn">
                     <a href="#">Get Started</a>
                 </div>
             </div>

@@ -6,7 +6,7 @@ const NavBar = () => {
   return (
     <div className="header container">
       <div className="right">
-        <a href="#">
+        <a href="/">
           <svg><BoltIcon /></svg>
           HUMAN BENCHMARK
         </a>
