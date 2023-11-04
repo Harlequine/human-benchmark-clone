@@ -8,28 +8,26 @@ import './SequenceTest.css'
 
 const SequenceTest = () => {
   const [ points, setPoints ] = useState(0);
-  const [ level, setLevel ] = useState(1);
-  const [ startGame, setStartGame ] = useState(false)
+  const [ isPlaying, setIsPlaying ] = useState(false);
   const [ gameOver, setGameOver ] = useState(false)
 
   return (
     <div id='sequence-test' className='game-bg'>
       <div className="container">
-        {!startGame && 
+        {!isPlaying && 
           <>
             <svg> <SquaresPlusIcon /> </svg>
             <h1>Sequence Memory Test</h1>
             <h2>Memorize the pattern.</h2>
             <div className="game-btn">
-              <a href="#" onClick={() => setStartGame(true)}>Start</a>
+              <a href="#" onClick={() => setIsPlaying(true)}>Start</a>
             </div>
           </>
         }
 
-        {startGame &&
-          <GameGrid />
+        {isPlaying &&
+          <GameGrid/>
         }
-
         {gameOver && 
           <>
             <svg> <SquaresPlusIcon /> </svg>
