@@ -31,11 +31,11 @@ const GameGrid = () => {
 
   useInterval(() => {//function for showing sequence
     currTile > level-1 ? setShowSequnce(false) : setCurrTile(currTile+1);
-
   }, showSequence ? 500 : null)
 
   useEffect(() => {
     setCurrTile(-1)
+    console.log(sequence)
   },[showSequence])
 
   useEffect(() => {
@@ -46,8 +46,6 @@ const GameGrid = () => {
     playerSequnce.length === level && sequenceChecker()
   },[playerSequnce])
 
-
-
   const sequenceChecker = () => {
     const compare = playerSequnce.every((num, idx) => num === sequence[idx])
 
@@ -55,7 +53,6 @@ const GameGrid = () => {
       setPlayerSequence([])
       console.log('correct')
     }
-
     else{
       setPlayerSequence([])
       console.log('wrong')

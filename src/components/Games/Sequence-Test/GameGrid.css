@@ -13,5 +13,20 @@
 }
 
 .white {
-  background-color: white !important;
+  background-color: #2573c1;
+  animation-name: color;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color {
+  0% {
+    background-color: #2573c1;
+  }
+  50% {
+    background-color: #FFFFFF;
+  }
+  100% {
+    background-color: #2573c1;
+  }
 }
