@@ -8,17 +8,47 @@
         margin-bottom: 60px;
         color: white;
         gap:1rem;
-        svg{
-            -webkit-animation: pulse 3s infinite ease-in-out;
-            -o-animation: pulse 3s infinite ease-in-out;
-            -ms-animation: pulse 3s infinite ease-in-out; 
-            -moz-animation: pulse 3s infinite ease-in-out; 
-            animation: pulse 3s infinite ease-in-out;
+        .start-game{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            svg{
+                -webkit-animation: pulse 3s infinite ease-in-out;
+                -o-animation: pulse 3s infinite ease-in-out;
+                -ms-animation: pulse 3s infinite ease-in-out; 
+                -moz-animation: pulse 3s infinite ease-in-out; 
+                animation: pulse 3s infinite ease-in-out;
+            }
+            .game-btn{
+                a{
+                    color: black;
+                    font-weight: bold;
+                }
+            }
         }
-        .game-btn{
-            a{
-                color: black;
-                font-weight: bold;
+
+        .game-over{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            svg{
+                width: 100px;
+                height: 100px;
+                -webkit-animation: pulse 3s infinite ease-in-out;
+                -o-animation: pulse 3s infinite ease-in-out;
+                -ms-animation: pulse 3s infinite ease-in-out; 
+                -moz-animation: pulse 3s infinite ease-in-out; 
+                animation: pulse 3s infinite ease-in-out;
+            }
+            .game-btn{
+                a{
+                    color: black;
+                    font-weight: bold;
+                }
             }
         }
     }
@@ -35,3 +65,47 @@
     50% { transform: scale(1); opacity: 1; }
     100% { transform: scale(0.9); opacity: 0.7; }
 }
+
+
+.correct{
+    background-color: #2573c1;
+    animation-name: correct;
+    animation-duration: 0.500s;
+    animation-iteration-count: infinite;
+    opacity: 0.5;
+    z-index: 100;
+}
+
+@keyframes correct {
+    0% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.incorrect{
+    background-color: #2573c1;
+    animation-name: incorrect;
+    animation-duration: 0.500s;
+    animation-iteration-count: 1;
+    opacity: 0.75;
+    z-index: 100;
+}
+
+@keyframes incorrect {
+    0% {
+        background-color: #2573c1;
+    }
+    50% {
+        background-color: #e64949;
+    }
+    100% {
+        background-color: #2573c1;
+    }
+}
+

@@ -1,3 +1,9 @@
+.level{
+    span{
+        font-size: 28px;
+        opacity: 0.5;
+    }
+}
 .game-grid{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -24,7 +30,7 @@
         background-color: #2573c1;
     }
     50% {
-        background-color: #FFFFFF;
+        background-color: #ffffff;
     }
     100% {
         background-color: #2573c1;
