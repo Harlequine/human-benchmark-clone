@@ -28,7 +28,7 @@ const SequenceTest = () => {
         {isPlaying &&
           <GameGrid/>
         }
-        {gameOver && 
+        {/* {gameOver && 
           <>
             <svg> <SquaresPlusIcon /> </svg>
             <h1>Sequence Memory Test</h1>
@@ -37,7 +37,7 @@ const SequenceTest = () => {
               <a href="#" onClick={() => setStartGame(true)}>Start</a>
             </div>
           </>
-        }
+        } */}
 
 
 

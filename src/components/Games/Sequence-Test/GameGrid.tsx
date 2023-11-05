@@ -5,11 +5,12 @@ import './GameGrid.css'
 
 /**
  * TODO:
- * random sequence generator function
- * sequence checker
+ * random sequence generator function >
+ * sequence checker >
  * correct and incorrect sequence indicator CSS
+ * incrementing level >
+ * try again
  * clickstate css
- * incrementing level
  */
 
 const randomNumberGenerator = (level:number):number => {
@@ -20,10 +21,13 @@ const board = [1,2,3,4,5,6,7,8,9]
 
 const GameGrid = () => {
   const [ sequence, setSeqeunce ] = useState([randomNumberGenerator(9)]);
-  const [ playerSequnce, setPlayerSequence ] = useState([]);
+  const [ playerSequnce, setPlayerSequence ] = useState<number[]>([]);
+  const [ psIndex, setPsIndex ] = useState(0);
   const [ currTile, setCurrTile ] = useState(-1);
   const [ showSequence, setShowSequnce ] = useState(true);
   const [ level, setLevel ] = useState(1)
+  const [ promptCorrect, setPromptCorrect ] = useState(false)
+  const [ promptWrong, setPromptWrong ] = useState(false)
 
   // useEffect(() => {
   //   sequence.length < 1 && setSeqeunce(curr => [...curr, randomNumberGenerator(1)])
@@ -36,30 +40,42 @@ const GameGrid = () => {
   useEffect(() => {
     setCurrTile(-1)
     console.log(sequence)
+    setPromptWrong(false)
   },[showSequence])
 
   useEffect(() => {
-    level > 1 && setSeqeunce(curr => [...curr, randomNumberGenerator(9)])
+    setShowSequnce(true)
+  },[sequence])
+
+  useEffect(() => {
+    level > 1 && setSeqeunce((curr:number[]) => [...curr, randomNumberGenerator(9)])
+    setPromptCorrect(false)
+    setPromptWrong(false)
   },[level])
 
   useEffect(() => {
-    playerSequnce.length === level && sequenceChecker()
+    playerSequnce.length === level ? setPromptCorrect(true) : playerSequnce.length > 0 && setPsIndex(psIndex+1)
   },[playerSequnce])
 
-  const sequenceChecker = () => {
-    const compare = playerSequnce.every((num, idx) => num === sequence[idx])
+  useEffect(() => {
+    promptCorrect === true && setLevel(level + 1)
+    console.log('correct')
+    setPlayerSequence([])
+    setPsIndex(0);
+  },[promptCorrect])
 
-    if(compare){
-      setPlayerSequence([])
-      console.log('correct')
-    }
-    else{
-      setPlayerSequence([])
+  const inputChecker = (cell:number):void => {//should check per input not as a whole
+    if(cell !== sequence[psIndex]){
+      setPsIndex(0);
+      setPlayerSequence([]);
+      setPromptWrong(true);
       console.log('wrong')
+      return;
     }
-
-    
+    setPlayerSequence((curr:number[]) => [...curr, cell])
   }
+
+
 
   return (
     <>
@@ -67,15 +83,18 @@ const GameGrid = () => {
       <div className='game-grid'>
         {board.map((cell,idx) => (
           <div className={sequence[currTile] === cell ? 'cell white' : 'cell'} key={idx} onClick={(() => {!showSequence && 
-            setPlayerSequence(curr => [...curr,cell])})}></div>
+            inputChecker(cell)})}></div>
         ))}
       </div>
-      <button onClick={() => setShowSequnce(true)}>
-        !showSequence
-      </button>
-      <button onClick={() => setLevel(level+1)}>
+      {promptWrong && 
+        <button onClick={() => setShowSequnce(true)}>
+        try again
+        </button>
+      }
+      {playerSequnce.map((cell,idx) => (<p key={idx}>{}{cell}</p>))}
+      {/* <button onClick={() => setLevel(level+1)}>
       {level}+1
-      </button>
+      </button> */}
     </>
   )
 }
