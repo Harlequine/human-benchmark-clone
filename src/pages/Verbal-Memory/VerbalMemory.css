@@ -1,0 +1,46 @@
+#verbal-memory .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  color: white;
+  gap: 1rem;
+}
+#verbal-memory .container .start-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#verbal-memory .container .start-game svg {
+  -webkit-animation: pulse 3s infinite ease-in-out;
+  -o-animation: pulse 3s infinite ease-in-out;
+  -ms-animation: pulse 3s infinite ease-in-out;
+  -moz-animation: pulse 3s infinite ease-in-out;
+  animation: pulse 3s infinite ease-in-out;
+}
+#verbal-memory .container .start-game .game-btn a {
+  color: black;
+  font-weight: bold;
+}
+#verbal-memory .container .game-over {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#verbal-memory .container .game-over svg {
+  -webkit-animation: pulse 3s infinite ease-in-out;
+  -o-animation: pulse 3s infinite ease-in-out;
+  -ms-animation: pulse 3s infinite ease-in-out;
+  -moz-animation: pulse 3s infinite ease-in-out;
+  animation: pulse 3s infinite ease-in-out;
+}
+#verbal-memory .container .game-over .game-btn a {
+  color: black;
+  font-weight: bold;
+}

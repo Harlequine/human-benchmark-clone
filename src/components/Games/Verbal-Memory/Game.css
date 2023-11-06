@@ -1,0 +1,27 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.game .indicators {
+  display: flex;
+  gap: 2rem;
+}
+.game .indicators p span {
+  opacity: 0.5;
+}
+.game h1:empty {
+  height: 95.45px;
+}
+.game .answer-btn {
+  display: flex;
+  gap: 1rem;
+}
+.game .answer-btn .game-btn {
+  font-weight: bold;
+  cursor: pointer;
+}

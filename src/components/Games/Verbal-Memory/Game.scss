@@ -1,0 +1,32 @@
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    .indicators{
+        display: flex;
+        gap: 2rem;
+        p{
+            span{
+                opacity: 0.5;
+            }
+        }
+    }
+
+    h1:empty{
+        height: 95.45px;
+    }
+
+    .answer-btn{
+        display: flex;
+        gap: 1rem;
+        
+        .game-btn{
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
