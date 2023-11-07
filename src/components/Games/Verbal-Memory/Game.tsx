@@ -1,45 +1,32 @@
 import { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import axios from 'axios';
 
 import './Game.css'
 
 interface VMprops{
-    setGameOver: Dispatch<SetStateAction<boolean>>
-    getScore: Dispatch<SetStateAction<number>>
+    setGameOver: Dispatch<SetStateAction<boolean>>,
+    getScore: Dispatch<SetStateAction<number>>,
+    words: string[]
 }
 
 const rng = () => {
-    return Math.floor(Math.random() * 100)
+    return Math.floor(Math.random() * 50)
 }
 
 const Game = (props:VMprops) => {
-    const { setGameOver, getScore } = props;
-    const [ words, setWords ] = useState([]);
-    const [ currentWord, setCurrentWord ] = useState('');
+    const { setGameOver, getScore, words } = props;
+    const [ currentWord, setCurrentWord ] = useState(words[rng()]);
     const [ seenWords, setSeenWords ] = useState<string[]>([]);
     const [ lives, setLives ] = useState(3);
     const [ score, setScore ] = useState(0);
-
-
-    useEffect(() => {
-        const generateRandomWords = async () => {
-            await axios.get('https://random-word-form.repl.co/random/noun/?count=100')
-            .then(res => setWords(res.data)).catch(err => console.log(err));
-        }
-        words.length === 0 && generateRandomWords();
-    },[])
-
-    useEffect(() => {
-        words.length > 0 && setCurrentWord(words[rng()])
-    },[words])
+    const [ seenCtr, setSeenCtr ] = useState(0);
 
     useEffect(() => {
         console.log(currentWord)
     },[currentWord])
 
     useEffect(() => {
-        seenWords.length === words.length && console.log('congrats')
-    },[seenWords])
+        seenCtr === words.length && console.log('congrats')
+    },[seenCtr])
 
     useEffect(() => {
         if(lives === 0){
@@ -52,6 +39,7 @@ const Game = (props:VMprops) => {
         if(answer === 'seen'){
             if(seenWords.includes(currentWord)){
                 setScore(score => score + 1)
+                setSeenCtr(seenCtr => seenCtr + 1)
             }
             else{
                 setLives(lives => lives - 1)
@@ -66,7 +54,6 @@ const Game = (props:VMprops) => {
                 setLives(lives => lives - 1)
             }
         }
-        
         setCurrentWord(words[rng()])
     }
 

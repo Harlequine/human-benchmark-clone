@@ -22,6 +22,5 @@
   gap: 1rem;
 }
 .game .answer-btn .game-btn {
-  font-weight: bold;
   cursor: pointer;
 }

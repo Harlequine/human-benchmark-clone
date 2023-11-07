@@ -1,0 +1,37 @@
+#number-memory .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+#number-memory .container .start-game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#number-memory .container .stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#number-memory .container .stats .actual-answer, #number-memory .container .stats .user-answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#number-memory .container .stats .actual-answer h2, #number-memory .container .stats .user-answer h2 {
+  opacity: 0.5;
+}
+#number-memory .container .stats .actual-answer span, #number-memory .container .stats .user-answer span {
+  font-size: 40px;
+}
+
+.wrong {
+  color: black;
+  text-decoration: line-through;
+}

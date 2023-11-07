@@ -1,0 +1,35 @@
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.answer-form p {
+  opacity: 0.5;
+}
+.answer-form form {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+input {
+  outline: none;
+  border-radius: 2px;
+  border: 1px solid #2b87d1;
+  background-color: #226cbb;
+  border: 2px;
+  padding: 10px;
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

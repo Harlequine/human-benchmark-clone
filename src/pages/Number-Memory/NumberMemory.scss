@@ -1,39 +1,40 @@
-#verbal-memory{
+#number-memory{
     .container{
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
         color: white;
-        gap:1rem;
         .start-game{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            .game-btn{
-                cursor: pointer;
-            }
         }
-        .game-over{
+        .stats{
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
-            .game-btn{
-                cursor: pointer;
+            gap:1rem;
+            .actual-answer, .user-answer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h2{
+                    opacity: 0.5;
+                }
+                span{
+                    font-size: 40px;
+                }
             }
         }
     }
 }
 
-@keyframes pulse-faint {
-    0%{
-        opacity: 0.6;
-    }
-    100%{
-        opacity: 1;
-    }
+.wrong{
+    color:black;
+    text-decoration: line-through
 }
+

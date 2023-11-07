@@ -4,8 +4,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 60px;
-        margin-bottom: 60px;
         color: white;
         gap:1rem;
         .start-game{
@@ -14,18 +12,8 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
-            svg{
-                -webkit-animation: pulse 3s infinite ease-in-out;
-                -o-animation: pulse 3s infinite ease-in-out;
-                -ms-animation: pulse 3s infinite ease-in-out; 
-                -moz-animation: pulse 3s infinite ease-in-out; 
-                animation: pulse 3s infinite ease-in-out;
-            }
             .game-btn{
-                a{
-                    color: black;
-                    font-weight: bold;
-                }
+                cursor: pointer;
             }
         }
 
@@ -38,32 +26,12 @@
             svg{
                 width: 100px;
                 height: 100px;
-                -webkit-animation: pulse 3s infinite ease-in-out;
-                -o-animation: pulse 3s infinite ease-in-out;
-                -ms-animation: pulse 3s infinite ease-in-out; 
-                -moz-animation: pulse 3s infinite ease-in-out; 
-                animation: pulse 3s infinite ease-in-out;
             }
             .game-btn{
-                a{
-                    color: black;
-                    font-weight: bold;
-                }
+                cursor: pointer;
             }
         }
     }
-}
-
-@-webkit-keyframes pulse {
-    0% { -webkit-transform: scale(0.9); opacity: 0.7; }
-    50% { -webkit-transform: scale(1); opacity: 1; }
-    100% { -webkit-transform: scale(0.9); opacity: 0.7; }
-}
-
-@keyframes pulse {
-    0% { transform: scale(0.9); opacity: 0.7; }
-    50% { transform: scale(1); opacity: 1; }
-    100% { transform: scale(0.9); opacity: 0.7; }
 }
 
 
@@ -108,4 +76,5 @@
         background-color: #2573c1;
     }
 }
+
 

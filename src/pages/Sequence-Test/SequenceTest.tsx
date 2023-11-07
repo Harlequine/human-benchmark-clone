@@ -34,15 +34,15 @@ const SequenceTest = () => {
 
   return (
     <div id='sequence-test' className={`game-bg ${classPrompt}`}>
-      <div className="container">
+      <div className="container game-container">
         {!isPlaying && 
           <div className='start-game'>
             <svg> <SquaresPlusIcon /> </svg>
             <h1>Sequence Memory Test</h1>
             <h2>Memorize the pattern.</h2>
-            <div className="game-btn">
-              <a href="#" onClick={() => setIsPlaying(true)}>Start</a>
-            </div>
+            <button className="game-btn" onClick={() => setIsPlaying(true)}>
+              Start
+            </button>
           </div>
         }
 
@@ -55,9 +55,9 @@ const SequenceTest = () => {
             <h2>Sequence Memory Test</h2>
             <h1>Level {level}</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-            <div className="game-btn">
-              <a href="#" onClick={() => {setGameOver(false)}}>Try Again</a>
-            </div>
+            <button className="game-btn" onClick={() => setGameOver(false)}>
+              Try Again
+            </button>
           </div>
         }
 
