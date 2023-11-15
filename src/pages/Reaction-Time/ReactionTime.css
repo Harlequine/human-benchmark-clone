@@ -1,0 +1,19 @@
+#reaction-time {
+  cursor: pointer;
+}
+#reaction-time .hero {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.set {
+  background-color: rgb(255, 76, 76) !important;
+}
+
+.go {
+  background-color: rgb(49, 248, 49) !important;
+}
